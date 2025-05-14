@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  # PostgreSQLサービス
+  db:
+    image: postgres:16
+    container_name: postgres-db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: mcp_ux
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db/init:/docker-entrypoint-initdb.d
+    networks:
+      - postgres-network
+
+volumes:
+  postgres_data:
+    name: postgres_data
+
+networks:
+  postgres-network:
+    driver: bridge
