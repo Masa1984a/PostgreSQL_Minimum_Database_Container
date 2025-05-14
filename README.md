@@ -29,8 +29,8 @@
 1. リポジトリをクローンまたはダウンロード:
 
 ```bash
-git clone <リポジトリURL>
-cd <プロジェクトディレクトリ>
+git clone https://github.com/Masa1984a/PostgreSQL_Minimum_Database_Container.git
+cd PostgreSQL_Minimum_Database_Container
 ```
 
 2. 使用中のPodmanマシンを確認:
